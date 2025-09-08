@@ -26,27 +26,13 @@
     };
 </script>
 
-<figure class="w-full py-4 flex gap-6">
+<figure class="w-full py-4 flex flex-col lg:flex-row gap-6">
 
         <ClickToView
             picture={thumbnail}
             alt={`Thumbnail for ${title ? `"${title}"` : `Season ${seasonNo} Episode ${episodeNo}`}`}
-            class="w-64 aspect-video h-auto overflow-hidden bg-neutral-800"
-        />   
-
-        <!-- <picture>
-            {#each thumbnail as source}
-                {#if typeof source === "string"}
-                    <img
-                        src={source}
-                        alt={`Thumbnail for ${title ? `"${title}"` : `Season ${seasonNo} Episode ${episodeNo}`}`}
-                        class="w-full h-full object-cover object-center"
-                    />
-                {:else}
-                    <source media={source.media} srcset={source.srcset} />
-                {/if}
-            {/each}
-        </picture> -->
+            class="w-full lg:w-64 aspect-video h-auto overflow-hidden bg-neutral-800"
+        />
     <figcaption class="space-y-1 flex-1">
         <h2 class="text-xl font-semibold">
             Season {seasonNo} - Episode {episodeNo}{#if title}: {title}{/if}

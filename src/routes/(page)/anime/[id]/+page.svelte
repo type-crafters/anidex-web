@@ -1,13 +1,17 @@
 <script lang="ts">
     import type { IMediaBanner } from "$common/interface";
+    import Alert from "$lib/Alert.svelte";
+    import CastingCard from "$lib/CastingCard.svelte";
     import EpisodeCard from "$lib/EpisodeCard.svelte";
     import MediaBanner from "$lib/MediaBanner.svelte";
 
     const details = {
+        "No. of seasons": 1,
         "No. of episodes": 12,
-        Status: "Finished Airing",
-        Aired: new Date(),
-    };
+        "Studios": ["Mappa"],
+        "Avg. duration": "24 min",
+        "Rating": "R (17+)"
+    }
 
     const props: IMediaBanner = {
         picture: ["/img/placeholder.svg"],
@@ -31,21 +35,45 @@
 </script>
 
 <MediaBanner {...props} />
-<main id="anime-info" class="container mx-auto my-8 px-4 flex gap-4">
+<div class="container mx-auto my-8">
+    <Alert class="flex items-center gap-2">
+        <i class="bi bi-exclamation-circle"></i>
+        <p>AniDex does not host or index clandestine content on this site.</p>
+    </Alert>
+</div>
+<main id="anime-info" class="container mx-auto px-4 flex gap-4">
     <aside class="flex-1 px-4">
         <h2 class="text-xl font-semibold">Details</h2>
         <hr class="my-1 opacity-40" />
+        <div class="grid gap-2 my-4">
+            {#each Object.entries(details) as [key, value]}
+                <div>
+                    <span class="font-semibold">{key}:</span>
+                    <span>{value}</span>
+                </div>
+            {/each}
+        </div>
     </aside>
-    <div class="flex-3 px-4">
-        <section>
+    <div class="flex-3 px-4 space-y-6">
+        <section id="episodes">
             <h2 class="text-xl font-semibold">Episodes</h2>
             <hr class="my-1 opacity-40" />
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col my-6 gap-4">
                 <EpisodeCard />
                 <EpisodeCard />
                 <EpisodeCard />
                 <EpisodeCard />
                 <EpisodeCard />
+            </div>
+        </section>
+        <section id="cast">
+            <h2 class="text-xl font-semibold">Characters</h2>
+            <hr class="my-1 opacity-40" />
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 my-6 gap-4">
+                <CastingCard />
+                <CastingCard />
+                <CastingCard />
+                <CastingCard />
             </div>
         </section>
     </div>

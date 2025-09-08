@@ -4,7 +4,7 @@
     interface ClickToViewProps {
         picture: Array<string | PictureSource>;
         alt: string;
-        class: string;
+        class?: string;
     }
 
     const { picture, alt, class: className }: ClickToViewProps = $props();
@@ -25,18 +25,17 @@
                 <i class="bi bi-x-lg text-xl"></i>
             </button>
         </div>
-        <div class="w-4/5 h-4/5 bg-neutral-600">
+        <div class="w-4/5 h-4/5">
             <img
                 src={picture.find((source) => typeof source === "string")}
-                alt=""
-                class="w-full h-full aspect-auto object-contain object-center"
+                alt={alt}
+                class="w-full h-full aspect-auto object-scale-down object-center"
             />
         </div>
     </div>
 {/if}
 
 <button
-    aria-label="Click to view full size image"
     class={`${className} cursor-pointer hover:brightness-60 duration-200`}
     onclick={() => (view = true)}
 >

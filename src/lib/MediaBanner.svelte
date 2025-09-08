@@ -4,7 +4,7 @@
 </script>
 
 <figure id="media-banner" class="w-full">
-    <div id="picture-container" class="relative w-full aspect-[20/7] h-auto bg-neutral-600 overflow-hidden">
+    <div id="picture-container" class="relative w-full aspect-[22/7] h-auto bg-neutral-600 overflow-hidden">
         <div id="fade-overlay" class="absolute inset-0 bg-linear-to-b from-60% from-transparent to-95% to-black"></div>
         <picture id="media-picture" class="w-full h-full overflow-hidden">
             {#each picture as source}
@@ -28,7 +28,10 @@
             <ul id="media-genres" class="flex gap-4">
                 {#each genres as genre (genre.id)}
                     <li>
-                        <a href={genre.href} class="opacity-60 hover:underline">{genre.name}</a>
+                        <a
+                            href={genre.href}
+                            class="text-white/80 bg-neutral-800 uppercase px-2 py-0.5 font-semibold rounded hover:bg-neutral-700 duration-200"
+                        >{genre.name}</a>
                     </li>
                 {/each}
             </ul>
