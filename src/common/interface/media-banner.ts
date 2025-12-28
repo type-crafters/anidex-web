@@ -1,4 +1,4 @@
-import type { IMediaGenre } from "./media-tag";
+import type { IMediaGenre } from "./media-genre";
 import type { PictureSource } from "./picture-source";
 
 export interface IMediaBanner {

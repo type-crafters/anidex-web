@@ -4,6 +4,7 @@
     import CastingCard from "$lib/CastingCard.svelte";
     import EpisodeCard from "$lib/EpisodeCard.svelte";
     import MediaBanner from "$lib/MediaBanner.svelte";
+    import WebsiteHeader from "$lib/WebsiteHeader.svelte";
 
     const details = {
         "No. of seasons": 1,
@@ -38,7 +39,7 @@
 <div class="container mx-auto my-8">
     <Alert class="flex items-center gap-2">
         <i class="bi bi-exclamation-circle"></i>
-        <p>AniDex does not host or index clandestine content on this site.</p>
+        <p>AniDex does not host or index clandestine content of any kind.</p>
     </Alert>
 </div>
 <main id="anime-info" class="container mx-auto px-4 flex gap-4">
