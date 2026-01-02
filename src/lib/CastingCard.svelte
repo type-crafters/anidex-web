@@ -1,10 +1,9 @@
 <script lang="ts">
-    import type { PictureSource } from "$common/interface";
     import ClickToView from "./ClickToView.svelte";
 
     interface IMediaCast {
         characterName: string;
-        characterPicture: Array<string | PictureSource>;
+        characterPicture: Array<any>;
         actorName: string;
     }
 

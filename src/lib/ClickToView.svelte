@@ -1,8 +1,6 @@
 <script lang="ts">
-    import type { PictureSource } from "$common/interface";
-
     interface ClickToViewProps {
-        picture: Array<string | PictureSource>;
+        picture: Array<string | any>;
         alt: string;
         class?: string;
     }
@@ -36,7 +34,7 @@
 {/if}
 
 <button
-    class={`${className} cursor-pointer hover:brightness-60 duration-200`}
+    class={`${className} cursor-pointer hover:brightness-60 hover:scale-102 duration-200`}
     onclick={() => (view = true)}
 >
     <picture>

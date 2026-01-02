@@ -1,10 +1,9 @@
 <script lang="ts">
-    import type { IMediaBanner } from "$common/interface";
     import Alert from "$lib/Alert.svelte";
     import CastingCard from "$lib/CastingCard.svelte";
+    import Comment from "$lib/Comment.svelte";
     import EpisodeCard from "$lib/EpisodeCard.svelte";
     import MediaBanner from "$lib/MediaBanner.svelte";
-    import WebsiteHeader from "$lib/WebsiteHeader.svelte";
 
     const details = {
         "No. of seasons": 1,
@@ -14,10 +13,10 @@
         "Rating": "R (17+)"
     }
 
-    const props: IMediaBanner = {
+    const props = {
         picture: ["/img/placeholder.svg"],
         title: "Chainsaw Man",
-        genres: [
+        categories: [
             { id: 0, name: "Action", href: "/categories/action" },
             { id: 1, name: "Shonen", href: "/categories/shonen" },
             { id: 2, name: "Supernatural", href: "/categories/supernatural" },
@@ -59,7 +58,7 @@
         <section id="episodes">
             <h2 class="text-xl font-semibold">Episodes</h2>
             <hr class="my-1 opacity-40" />
-            <div class="flex flex-col my-6 gap-4">
+            <div class="flex flex-col my-4 gap-4">
                 <EpisodeCard />
                 <EpisodeCard />
                 <EpisodeCard />
@@ -70,11 +69,20 @@
         <section id="cast">
             <h2 class="text-xl font-semibold">Characters</h2>
             <hr class="my-1 opacity-40" />
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 my-6 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 my-4 gap-4">
                 <CastingCard />
                 <CastingCard />
                 <CastingCard />
                 <CastingCard />
+            </div>
+        </section>
+        <section id="cast">
+            <h2 class="text-xl font-semibold">Comments</h2>
+            <hr class="my-1 opacity-40" />
+            <div class="flex flex-col my-4 gap-4">
+                <Comment />
+                <Comment />
+                <Comment />
             </div>
         </section>
     </div>

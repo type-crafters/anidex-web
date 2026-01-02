@@ -1,8 +1,7 @@
 <script lang="ts">
     import { page } from "$app/state";
-    import type { INavLink } from "$common/interface";
 
-    const navigation: Array<INavLink> = [
+    const navigation: Array<any> = [
         { href: "/anime", text: "Anime" },
         { href: "/webtoons", text: "Webtoons" }
     ];

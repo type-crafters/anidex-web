@@ -1,11 +1,16 @@
 <script lang="ts">
-    import { type IMediaBanner } from "$common/interface";
-    let { picture, title, genres, overview }: IMediaBanner = $props(); 
+    let { picture, title, categories, overview } = $props();
 </script>
 
 <figure id="media-banner" class="w-full">
-    <div id="picture-container" class="relative w-full aspect-[22/7] h-auto bg-neutral-600 overflow-hidden">
-        <div id="fade-overlay" class="absolute inset-0 bg-linear-to-b from-60% from-transparent to-95% to-black"></div>
+    <div
+        id="picture-container"
+        class="relative w-full aspect-[22/7] h-auto bg-neutral-600 overflow-hidden"
+    >
+        <div
+            id="fade-overlay"
+            class="absolute inset-0 bg-linear-to-b from-60% from-transparent to-95% to-black"
+        ></div>
         <picture id="media-picture" class="w-full h-full overflow-hidden">
             {#each picture as source}
                 {#if typeof source === "string"}
@@ -13,25 +18,25 @@
                         src={source}
                         alt={"Banner for " + title}
                         class="w-full h-full object-cover object-center"
-                    /> 
+                    />
                 {:else}
-                    <source media={source.media} srcset={source.srcset}>   
+                    <source media={source.media} srcset={source.srcset} />
                 {/if}
             {/each}
         </picture>
     </div>
-    <figcaption id="media-info" class="px-8 py-4 bg-black space-y-6">
+    <figcaption id="media-info" class="px-8 py-4 bg-black space-y-4">
         <div id="media-title">
             <h1 class="text-4xl font-semibold">{title}</h1>
         </div>
         <div id="media-details" class="space-y-4">
-            <ul id="media-genres" class="flex gap-4">
-                {#each genres as genre (genre.id)}
+            <ul id="media-categories" class="flex gap-4">
+                {#each categories as cat (cat.id)}
                     <li>
                         <a
-                            href={genre.href}
+                            href={cat.href}
                             class="text-white/80 bg-neutral-800 uppercase px-2 py-0.5 font-semibold rounded hover:bg-neutral-700 duration-200"
-                        >{genre.name}</a>
+                        >{cat.name}</a>
                     </li>
                 {/each}
             </ul>

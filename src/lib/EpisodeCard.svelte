@@ -1,5 +1,4 @@
 <script lang="ts">
-    import type { IMediaEpisode } from "$common/interface";
     import ClickToView from "./ClickToView.svelte";
 
     const {
@@ -9,7 +8,7 @@
         title,
         releaseDate,
         overview,
-    }: IMediaEpisode = {
+    } = {
         thumbnail: ["/img/placeholder.svg"],
         seasonNo: 1,
         episodeNo: 1,
